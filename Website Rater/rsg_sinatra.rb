@@ -56,7 +56,7 @@ get '/Uploads' do
 end
 
 
-get '/Sign in' do
+get '/Signin' do
   @session = 1
   if(session != 0)
     @user = 1
@@ -66,7 +66,7 @@ get '/Sign in' do
   end
 end
 
-get '/Sign out' do
+get '/Signout' do
   @session = 0
   @user = 1
   erb :signin

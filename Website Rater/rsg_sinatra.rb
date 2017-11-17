@@ -70,6 +70,13 @@ get '/Signout' do
   @session = 0
   @user = 1
   erb :signin
-
 end
+
+post '/save_file' do
+  File.open('uploads/' + params['file'][:filename], "w") do |f|
+    f.write(params['file'][:tempfile].read)
+  end
+  redirect to("/")
+end
+
 

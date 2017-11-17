@@ -2,18 +2,24 @@
   <div class="alert alert-secondary" role="alert">
     Select the zip file!
   </div>
-  <label class="custom-file" id="customFile">
-    <input type="file" class="custom-file-input">
-    <span class="custom-file-control form-control-file"></span>
-  </label>
+  <form action="/save_file" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <input name="file" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" accept=".zip">
+      <small id="fileHelp" class="form-text text-muted">Make sure your file ends with the extentions .zip</small>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Upload file">
+  </form>
 </div>
 <br>
 <div class= "container">
   <div class="alert alert-secondary" role="alert">
     Select the users file!
   </div>
-  <label class="custom-file" id="customFile">
-    <input type="file" class="custom-file-input">
-    <span class="custom-file-control form-control-file"></span>
-  </label>
+  <form action="/save_file" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <input name="file" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" accept=".csv">
+      <small id="fileHelp" class="form-text text-muted">Make sure your file ends with the extentions .csv</small>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Upload file">
+  </form>
 </div>

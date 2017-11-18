@@ -13,7 +13,7 @@
 
 
 </head>
-<body>
+<body class="container-fluid">
   <%= erb :nav %>
   <section class="container">
     <%= yield %>
@@ -63,6 +63,13 @@
             var options = {
                 title: 'Lengths of dinosaurs, in meters',
                 legend: { position: 'none' },
+                animation:{
+                    duration: 1000,
+                    easing: 'out',
+                    startup: true
+                },chartArea: '25%',
+                'width':650,
+                'height':350
             };
 
             var chart = new google.visualization.Histogram(document.getElementById('chart_div2'));
@@ -98,8 +105,9 @@
 
             // Set chart options
             var options = {'title':'How Much Pizza I Ate Last Night',
-                'width':400,
-                'height':300};
+                animation:{duration: 1000, easing: 'out', startup: true},chartArea: '25%',
+                'width':650,
+                'height':350};
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

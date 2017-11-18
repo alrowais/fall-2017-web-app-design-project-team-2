@@ -4,7 +4,7 @@ require 'sinatra/reloader' if development?
 
 
 set :public_folder, 'view'
-
+@files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
 get '/' do
   @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
   @session = 1
@@ -19,7 +19,7 @@ end
 
 
 get '/Home' do
-  @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html']
+  @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
   @session = 1
   if(session != 0)
     @user = 1
@@ -30,6 +30,7 @@ get '/Home' do
 end
 
 get '/Members' do
+  @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
   @session = 1
   if(session != 0)
     @user = 1
@@ -40,6 +41,7 @@ get '/Members' do
 end
 
 get '/Analytics' do
+  @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
   @session = 1
   if(session != 0)
     @user = 1
@@ -50,6 +52,7 @@ get '/Analytics' do
 end
 
 get '/Uploads' do
+  @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
   @session = 1
   if(session != 0)
     @user = 1
@@ -61,6 +64,7 @@ end
 
 
 get '/Signin' do
+  @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
   @session = 1
   if(session != 0)
     @user = 1
@@ -71,6 +75,7 @@ get '/Signin' do
 end
 
 get '/Signout' do
+  @files = ['uploads/bootstrap/BootStrap.html', 'uploads/bootstrap2/BootStrap.html', 'uploads/bootstrap3/BootStrap.html']
   @session = 0
   @user = 1
   erb :signin
@@ -91,9 +96,3 @@ get '/uploads/:folder/:file' do
   File.read("uploads/#{@folder}/#{@file}")
 end
 
-get '/uploads/:folder/:file' do
-  @folder = params[:folder]
-  @file = params[:file]
-
-  File.read("uploads/#{@folder}/#{@file}")
-end

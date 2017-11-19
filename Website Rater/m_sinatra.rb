@@ -89,10 +89,14 @@ post '/save_file' do
     f.write(params['file'][:tempfile].read)
   end
   file = 'uploads/' + params['file'][:filename]
+  FileUtils.remove_dir('uploads/file') if File.exist?('uploads/file')
   extract_zip(file, 'uploads/file')
   File.delete(file)
   FileUtils.remove_dir('uploads/__MACOSX') if File.exist?('uploads/__MACOSX')
   FileUtils.remove_dir('uploads/file/__MACOSX') if File.exist?('uploads/file/__MACOSX')
+  FileUtils.remove_dir('uploads/.DS_Store') if File.exist?('uploads/.DS_Store')
+  FileUtils.remove_dir('uploads/file/.DS_Store') if File.exist?('uploads/file/.DS_Store')
+
   redirect to("/")
 end
 
